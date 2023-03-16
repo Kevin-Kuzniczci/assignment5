@@ -11,13 +11,57 @@
         h1              {margin-bottom: 30px;}
         label           {font-weight: bold;}
         input, select   {margin-bottom: 10px;}
-        form            {width: 30%; padding: 20px;}
+        form            {width: 60%; padding: 20px;}
     </style>
 </head>
 <body class="m-4">
     <h1>Employee Management System</h1>
-    <form id="empForm">
-     
+    <form id="empForm" name="empForm" onsubmit="return employeeManagement(e);">
+        <div>
+            <label>
+                <h1>8-Digit Employee ID</h1>
+            </label>
+            <input type="text" id="id" name="id" maxlength="8" required />
+        </div>
+        
+        <div>
+            <label>
+                <h1>Full Name</h1>
+            </label>
+            <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+            <label>
+                <h1>4-Digit Extension</h1>
+            </label>
+            <input type="text" id="ext" name="ext" maxlength="4" required />
+        </div>
+
+        <div>
+            <label>
+                <h1>Email</h1>
+            </label>
+            <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+            <label>
+                <h1>Department</h1>
+            </label>
+            <select id="department" name="department" required>
+                <option value="administrative">Administrative</option>
+                <option value="engineering">Engineering</option>
+                <option value="executive">Executive</option>
+                <option value="marketing">Marketing</option>
+                <option value="qualityAssurance">Quality Assurance</option>
+                <option value="sales">Sales</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" id="submit" value="Add Employee" onClick="employeeManagement(e)">Add Employee</button>
+        </div>
     </form>
 </body>
 </html>
